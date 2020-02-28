@@ -9,9 +9,9 @@ WORKDIR /src
 #
 # Adicionar os arquivos necessários
 #
-ADD database/data.pickle .
-ADD process.py .
-ADD requeriments.txt . 
+COPY arquivos/ arquivos
+COPY process.py .
+COPY requeriments.txt . 
 
 #
 # Instalar os requeriments

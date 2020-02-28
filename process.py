@@ -9,13 +9,11 @@ import os
 
 class Process:
     def __init__(self,modeldir='arquivos/model.tflearn'):
-        if os.path.exists('arquivos'):
+        if os.path.exists('arquivos/model.tflearn'):
             self.model = self.modelo(dir='arquivos/data.pickle')
             self.model.load(modeldir)
-        else:
-            self.main()
 
-    def carregarDado(self,dir='data.pickle'):
+    def carregarDado(self,dir='arquivos/data.pickle'):
         try:
             with open(dir,'rb') as f:
                 words,labels,training,output = pickle.load(f)
@@ -38,7 +36,7 @@ class Process:
     #
 
 
-    def modelo(self,dir='data.pickle'):
+    def modelo(self,dir='arquivos/data.pickle'):
         _,_,training,output = self.carregarDado(dir)
         tensorflow.reset_default_graph()
         net = tflearn.input_data(shape=[None, len(training[0])])
