@@ -2,6 +2,7 @@
     "type":"processamento",
     "name": "AIDA-processamento-1",
     "arquivos": ["database/{}/{}"],
+    "output":"data",
     "image": "tensorflow/tensorflow:1.14.0-gpu-py3",
     "version": 1
 }
